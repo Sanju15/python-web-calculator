@@ -2,7 +2,7 @@ from flask import Flask, render_template, request #,flash
 import re
 
 app = Flask(__name__, 
-            template_folder='src')
+            template_folder='src/templates')
             
 # app.secret_key = 'your-secret-key-here'  # Required for flash messages
 
@@ -61,7 +61,7 @@ def calculator():
             except Exception as e:
                 error = f"An error occurred: {str(e)}"
     
-    return render_template('calc.html', result=result, error=error)
+    return render_template('calculator.html', result=result, error=error)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
